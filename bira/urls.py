@@ -15,9 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import include
+from django.urls import path
+from django.views.generic import RedirectView
+from rest_framework.documentation import include_docs_urls
 
 urlpatterns = [
+    url(r'^$', RedirectView.as_view(url="docs")),
+
     path('admin/', admin.site.urls),
-    url(r'^api/v1/', include('apis.urls'))
+    path('api/v1/', include('apis.urls')),
+    path('docs/', include_docs_urls(title='BIRA API v1'), name='api_docs'),
+
 ]
