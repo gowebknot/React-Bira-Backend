@@ -1,4 +1,4 @@
-# hu2k19-react-assignment-backend
+# WTS2k20-react-assignment-backend
 
 ## Steps to start the server
 `virtualenv venv -p python3`
